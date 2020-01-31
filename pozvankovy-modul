@@ -1,0 +1,29 @@
+print("Elektronický novinář - Pozvánkový modul")
+
+def PrintKidsEvent():
+       print("Přijďte na událost",
+              row["event"],
+              ", která se odehraje",
+              row["date"],
+              "v",
+              row ["time"],
+              "hodin.")
+
+def PrintCinemaEvent():
+       print(None)
+
+def PrintMeetingEvent():
+       print(None)
+
+import csv
+with open("en-events.csv") as csvfile:
+       reader = csv.DictReader(csvfile)
+       for row in reader:
+              if row["type"] == "kids":
+                     PrintKidsEvent()
+              elif row["type"] == "cinema":
+                     PrintCinemaEvent()
+              elif row["type"] == "meeting":
+                     PrintMeetingEvent()
+              else:
+                     print(None)
