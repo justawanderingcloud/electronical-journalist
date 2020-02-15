@@ -1,0 +1,8 @@
+type,event,date,time,genre,story,topic
+kids,Hrátky s èerty,10.12.2020,10.15,,,
+kids,Drakiáda,16.01.2020,9.15,,,
+adults,Beseda s démony,06.06.2020,7.00,,,
+cinema,Tenkrát na východì,17.02.2020,19.00,western,napínavý,mimozemci bojují se staviteli pyramid
+cinema,Ètyøi ve výtahu,12.12.2021,17.55,science fiction,hororový,ètyøi lidé uvíznou ve výtahu cestujícím v èase
+cinema,Robožralok,16.06.2033,16.03,romantiky,vtipný,robotický žralok žere lidi hlava nehlava
+cinema,Kyberstonožka,30.05.2022,15.15,thrilleru,dìsivý,mechanická stonožka vypije celý oceán
