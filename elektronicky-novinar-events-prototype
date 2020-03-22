@@ -1,0 +1,53 @@
+import random
+
+MovieTitles = ["Ztraceni v pyramide", "Namornici v ponorce", "UFO vsude kolem nas"]
+RegionAdjective = "berounském"
+regionadjective2 = "berounského"
+cinemadays = ["11. prosince", "31. března", "1. dubna"]
+cinematimes = ["13.25", "20.30", "15.15"]
+cinemadescriptions = ["napínavý", "dobrodružný", "strašidelný"]
+cinemagenres = ["sci-fi", "fantasy", "horor"]
+cinemadestories = ["banda průzkumníků bloudí pyramidou", "námořníci sestaví papírovou ponorku", "jsou hvězdy na nebi vlastně létající talíře"]
+
+cinemasize = len(MovieTitles)
+
+templates1 = ["Pokud jste dlouho nebyli v kině, můžete využít blížícího se promítání abyste to napravili. ",
+              "Vyrazit si můžete do kina, pokud jste dlouho nebyli; máte tak jedinečnou příležitost tuto situaci změnit. ",
+              "Třeba byste si rádi někam vyrazili a tak docela nevíte kam, je tu vždy jedna oblíbená možnost: promítání filmu v kině. ",
+              "Jestli přemýšlíte, kam vyrazit za zábavou, ale restaurační zařízení nebo diskotéka nezní tentokrát úplně lákavě, můžete vyrazit na film do kina. "]
+
+templates2 = ["Nabízí se k tomu blížící se představení. ",
+              "A na jaké představení si můžete třeba vyrazit? ",
+              "Který film byste mohli zhlédnout? ",
+              "Přímo k tomu vybízí následující nabídka. "]
+
+templates3 = ["Film {} budou promítat v {} kině dne {} od {} hodin. ",
+              "Snímek s názvem {} budete moci zhlédnout v {} kině dne {} od {} hodin. ",
+              "Filmové představení {} odstartuje v {} biografu dne {} přesně v {} hodin. ",
+              "Užít si promítání filmu {} budete moci v {} kině, a to sice ve dne {} od {} hodin."]
+
+templates4 = ["Jedná se o {} příběh ze žánru {}. ",
+              "Je to {} příběh, který spadá do kategorie {}. ",
+              "{} příběh jeho autoři zařadili do žánru {}. ",
+              "Autoři snímku zařadili {} příběh do kategorie {}. "]
+
+templates5 = ["A co do v příběhu jde? Ve filmu {}. ",
+              "Ve filmu se můžete těšit na zápletku, ve které {}. ",
+              "Snímek zachycuje, jak {}. ",
+              "Uvidíte, jak {}. "]
+
+templates6 = ["Pokud tedy ještě nemáte žádné plány na den {}, můžete tedy vyrazit do {} kina na film {}.",
+             "Jestli tedy stále přemýšlíte, kam vyrazit {}, máte od nás možný tip; třeba do {} na snímek {}.",
+             "Třeba vás nabídka na {} inspiruje k návštěvě {} kina na film {}.",
+             "Takže třeba máte jasno: vyrazit {} do {} kina na {}."]
+
+selected1 = random.sample(templates1, cinemasize)
+selected2 = random.sample(templates2, cinemasize)
+selected3 = random.sample(templates3, cinemasize)
+selected4 = random.sample(templates4, cinemasize)
+selected5 = random.sample(templates5, cinemasize)
+selected6 = random.sample(templates6, cinemasize)
+
+for template1, template2, template3, template4, template5, template6, MovieTitle, cinemaday, cinematime, cinemadescription, cinemagenre, cinemastory in zip(selected1, selected2, selected3, selected4, selected5, selected6, MovieTitles, cinemadays, cinematimes, cinemadescriptions, cinemagenres, cinemadestories):
+  with open("en-events-output.txt", "a") as output:
+      print(template1.format(selected1), (template2.format(selected2)), template3.format(MovieTitle, RegionAdjective, cinemaday, cinematime), template4.format(cinemadescription, cinemagenre), template5.format(cinemastory), template6.format(cinemaday, regionadjective2, MovieTitle), file=output)
