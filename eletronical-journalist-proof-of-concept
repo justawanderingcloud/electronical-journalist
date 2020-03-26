@@ -49,5 +49,4 @@ selected5 = random.sample(templates5, cinemasize)
 selected6 = random.sample(templates6, cinemasize)
 
 for template1, template2, template3, template4, template5, template6, movietitle, cinemaday, cinematime, cinemadescription, cinemagenre, cinemastory in zip(selected1, selected2, selected3, selected4, selected5, selected6, movietitles, cinemadays, cinematimes, cinemadescriptions, cinemagenres, cinemadestories):
-  with open("en-events-output.txt", "a") as output:
-      print(template1.format(selected1), (template2.format(selected2)), template3.format(movietitle, regionadjective, cinemaday, cinematime), template4.format(cinemadescription, cinemagenre), template5.format(cinemastory), template6.format(cinemaday, regionadjective2, movietitle), file=output)
+  print(template1.format(selected1), (template2.format(selected2)), template3.format(movietitle, regionadjective, cinemaday, cinematime), template4.format(cinemadescription, cinemagenre), template5.format(cinemastory), template6.format(cinemaday, regionadjective2, movietitle))
