@@ -38,14 +38,21 @@ select_templates_2 = random.sample(templates_2, events_total_count)
 select_templates_3 = random.sample(templates_3, events_total_count)
 
 # article build
-for pre_intro, intro, event, date_item, \
-    event_date_info, outro in zip(select_templates_0_cinema, select_templates_1,
-                                  cinema_event_name, select_templates_2,
-                                  cinema_event_date, select_templates_3):
-    print(pre_intro, intro.format(event), date_item.format(event_date_info), outro.format(outro))
 
-for pre_intro, intro, event, date_item, \
-    event_date_info, outro in zip(select_templates_0_theatre, select_templates_1,
-                                  theatre_event_name, select_templates_2,
-                                  theatre_event_date, select_templates_3):
-    print(pre_intro, intro.format(event), date_item.format(event_date_info), outro.format(outro))
+if cinema_event_total_count > 0:
+    print("Total Cinema Shows:", cinema_event_total_count)
+    for pre_intro, intro, event, date_item, \
+        event_date_info, outro in zip(select_templates_0_cinema, select_templates_1, cinema_event_name,
+                                      select_templates_2, cinema_event_date, select_templates_3):
+        print(pre_intro, intro.format(event), date_item.format(event_date_info), outro.format(outro))
+else:
+    print("No Cinema Shows")
+
+if theatre_event_total_count > 0:
+    print("Total Theatre Shows:", theatre_event_total_count)
+    for pre_intro, intro, event, date_item, \
+        event_date_info, outro in zip(select_templates_0_theatre, select_templates_1, theatre_event_name,
+                                      select_templates_2, theatre_event_date, select_templates_3):
+        print(pre_intro, intro.format(event), date_item.format(event_date_info), outro.format(outro))
+else:
+    print("No Theatre Shows")
